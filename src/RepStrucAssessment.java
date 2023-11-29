@@ -104,32 +104,33 @@ public class RepStrucAssessment {
                     int numInputs, mode = 0, maxCount = 0;
                     System.out.println("\nProblem 3 - Mode:\n=====================\n");
                     System.out.print("Enter a number:  ");
-                    numInputs = console.nextInt();
-                        while (numInputs != -1) {
-                            int count = 0;
-
-                            for (int i = numInputs; i != -1; i++) {
-                                int digit = i % numInputs;
-
-                                int current = numInputs;
-                                while (current != 0) {
-                                    if (digit == current % numInputs) {
-                                        count++;
-                                    }
-                                    current /= numInputs;
-                                }
-                            }
-
-                            if (count > maxCount) {
-                                maxCount = count;
-                                mode = numInputs;
-                            }
-                            System.out.print("Enter a number:  ");
-                            numInputs = console.nextInt();
-                        }
-
-                        System.out.println("The mode is: " + mode);
-                        System.out.println("The frequency of the mode is: " + maxCount);
+                    System.out.print("Enter n : ");
+        int n = console.nextInt();
+        mode = n;
+        
+        do{
+            if(counter > counterph){
+                 frequency=counter;
+            } else frequency=counterph;
+            
+            if (mode == n){
+                counter++;
+                modeph = n;
+            } else{
+                counterph = counter;
+                counter = 1;
+                mode = n;
+                
+            }
+            System.out.print("Enter n : ");
+            n = console.nextInt();
+            
+            
+        }while (n != -1);
+         System.out.print("mode = " + modeph);
+         System.out.print("frequency = " + frequency);
+ 
+    
 
 
                     }
