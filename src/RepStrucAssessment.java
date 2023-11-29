@@ -1,22 +1,18 @@
-import java.util.Scanner;
+import java.util.*;
 public class RepStrucAssessment {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        /*
-        do while for the selection print
-            switch if selected num
-             if else
-                for loop for the repetition in the num
+        //initialize outside
+        int menu = 0;
+        int countermenu = 0;
 
-         */
-        int inputsel = 0;
-        int countersel=0;
-        do{
+        //do (this) while menu is not 4 || counter is not 2(2 Problems only)
+        do {
             System.out.println("[1] – Sum of Power\n[2] – Series\n[3] – Mode");
             System.out.print("Enter your choice: ");
-            inputsel = console.nextInt();
+            menu = console.nextInt();
 
-            switch(inputsel){
+            switch (menu) {
                 case 1:
                     System.out.println("\nProblem 1 - Series:\n=====================\n");
                     System.out.print("Enter x : ");
@@ -26,60 +22,133 @@ public class RepStrucAssessment {
                     double ansprob1 = 0;
                     double counter = 0;
                     double added1 = 0;
-                    while (counter != nprob1){
+                    while (counter != nprob1) {
                         counter++;
                         ansprob1 = (Math.pow(xprob1, counter));
                         added1 += ansprob1;
-                        if (counter == nprob1){
+                        if (counter == nprob1) {
                             System.out.println("Answer = " + added1);
                         }
                     }
+                    countermenu++;
                     break;
                 case 2:
-                    int counter2 = 1;
-                    int answer = 0;
                     System.out.println("\nProblem 2 - Series:\n=====================\n");
                     System.out.print("Enter n:  ");
-                    int nprob2 = console.nextInt();
-                    while(counter2 != nprob2){
-                        System.out.print("\nInput "+nprob2+" integers: ");
-                        int input2 = console.nextInt();
-                        counter2++;
-                        /*
-                        even odd numbers; set counter; if counter is even then switch to minus, then interval
-                         */
-                        if (input2 % 2 == 0){
-                            System.out.println("even");
-                            System.out.print("\nInput "+nprob2+" integers: ");
-                             input2 = console.nextInt();
-                        } else System.out.println("odd");{
-                            System.out.print("\nInput " + nprob2 + " integers: ");
-                            input2 = console.nextInt();
+                    int n = console.nextInt();
+                    System.out.print("\nInput " + n + " integers: ");
+
+                    int result = 0;
+                    for (int i = 0; i < n; i++) {
+                        int number = console.nextInt();
+                        if (i % 2 == 0) {
+                            result += number;
+                        } else {
+                            result -= number;
                         }
                     }
+                    System.out.println("Answer = " + result);
+                    countermenu++;
                     break;
                 case 3:
-                    System.out.println("\nProblem 3 - Series:\n=====================\n");
-                    //frequencymap. command
+
+                    countermenu++;
                     break;
             }
-            if (inputsel > 1 || inputsel <=4){
-                System.out.println("\n[1] – Sum of Power\n[2] – Series\n[3] – Mode\n[4] – Exit");
-                System.out.print("Enter your choice: ");
-                inputsel = console.nextInt();
-                countersel++;
+            // print again selection
+            System.out.println("\n[1] – Sum of Power\n[2] – Series\n[3] – Mode\n[4] – Exit");
+            System.out.print("Enter your choice: ");
+            menu = console.nextInt();
 
-                if (inputsel == 4){
-                    System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
-                    System.exit(0);
-                }
+            switch (menu) {
+                case 1:
+                    System.out.println("\nProblem 1 - Series:\n=====================\n");
+                    System.out.print("Enter x : ");
+                    double xprob1 = console.nextInt();
+                    System.out.print("Enter n : ");
+                    double nprob1 = console.nextInt();
+                    double ansprob1 = 0;
+                    double counter = 0;
+                    double added1 = 0;
+                    while (counter != nprob1) {
+                        counter++;
+                        ansprob1 = (Math.pow(xprob1, counter));
+                        added1 += ansprob1;
+                        if (counter == nprob1) {
+                            System.out.println("Answer = " + added1);
+                        }
+                    }
+                    countermenu++;
+                    break;
+                case 2:
+                    System.out.println("\nProblem 2 - Series:\n=====================\n");
+                    System.out.print("Enter n:  ");
+                    int n = console.nextInt();
+                    System.out.print("\nInput " + n + " integers: ");
 
-                if (countersel == 2){
-                    System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
-                    System.exit(0);
-                }
-            }
+                    int integers = 0;
+                    for (int i = 0; i < n; i++) {
+                        System.out.print(", ");
+                        int number = console.nextInt();
+                        if (i % 2 == 0) {
+                            integers += number;
+                        } else {
+                            integers -= number;
+                            System.out.println(integers);
+                        }
+                    }
+                    System.out.println("Answer = " + integers);
+                    countermenu++;
+                    break;
+                case 3:
+                    int numInputs, mode = 0, maxCount = 0;
+                    System.out.println("\nProblem 3 - Mode:\n=====================\n");
+                    System.out.print("Enter a number:  ");
+                    numInputs = console.nextInt();
+                        while (numInputs != -1) {
+                            int count = 0;
+
+                            for (int i = numInputs; i != -1; i++) {
+                                int digit = i % numInputs;
+
+                                int current = numInputs;
+                                while (current != 0) {
+                                    if (digit == current % numInputs) {
+                                        count++;
+                                    }
+                                    current /= numInputs;
+                                }
+                            }
+
+                            if (count > maxCount) {
+                                maxCount = count;
+                                mode = numInputs;
+                            }
+                            System.out.print("Enter a number:  ");
+                            numInputs = console.nextInt();
+                        }
+
+                        System.out.println("The mode is: " + mode);
+                        System.out.println("The frequency of the mode is: " + maxCount);
+
+
+                    }
+                    countermenu++;
+                    break;
+
+
+
+        } while (menu >= 1 || menu != 4);
+
+        if (menu == 4) {
+            System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
+            System.exit(0);
         }
-        while (inputsel <= 0 || inputsel > 3);
+
+        if (countermenu == 2) {
+            System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
+            System.exit(0);
+        }
     }
+
 }
