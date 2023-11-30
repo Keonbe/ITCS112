@@ -39,7 +39,7 @@ public class RepStrucAssessment {
                     System.out.println("\nProblem 2 - Series:\n=====================\n");
                     System.out.print("Enter n:  ");
                     int n = console.nextInt();
-                    System.out.print("\nInput " + n + " integers: ");
+                    System.out.println("Input " + n + " integers: ");
                     int result = 0;
                     for (int i = 0; i < n; i++) { //loop until i is less than n
                         int number = console.nextInt(); //inputs a number
@@ -117,13 +117,11 @@ public class RepStrucAssessment {
 
                     int integers = 0;
                     for (int i = 0; i < n; i++) {
-                        System.out.print(", ");
                         int number = console.nextInt();
                         if (i % 2 == 0) {
                             integers += number;
                         } else {
                             integers -= number;
-                            System.out.println(integers);
                         }
                     }
                     System.out.println("Answer = " + integers);
@@ -172,5 +170,8 @@ public class RepStrucAssessment {
             System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
             System.exit(0);
         }
+        System.out.println("\nWritten by:\nKeanu Bembo\nAlbert Masangkay");
+        System.exit(0);
     }
+
 }
