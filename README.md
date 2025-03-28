@@ -1,4 +1,4 @@
-# ITCS214 - Intermediate Programming Lab
+# ITCS123 - Intermediate Programming Lab
 
 ## Introduction
 This repository contains my Java implementations of fundamental programming concepts covered in the Intermediate Programming class at De La Salle University Dasmarinas.
@@ -36,8 +36,17 @@ Guide:
 
 | #  | Title                                   | Lesson/Topic                      | Filename |
 |----|-----------------------------------------|------------------------------------|----------|
-| 2.X | Intermediate Programming Finals Lab Summative 2024 | Final Summative | n/a |
-| 1.X | Intermediate Programming Midterms Lab Summative 2024 | Midterms Summative | n/a |
+| 2.4 | Intermediate Programming Finals Lab Summative 2024 | Final Summative | n/a |
+| 2.3 | Empty |  Sorting Algorithms | n/a |
+| 2.2 | Empty |  Searching Algorithms | n/a |
+| 2.1 | Empty | User-Defined Classes | n/a |
+| 1.7 | Intermediate Programming Midterms Lab Summative 2024 | Midterms Summative | n/a |
+| 1.6 | Empty |  Recursive Methods| n/a |
+| 1.5 | Empty |  User-Defined Methods | n/a |
+| 1.4 | Empty |  File Processing | n/a |
+| 1.3 | Empty |  Structured Data Types | n/a |
+| 1.2 | Empty |  Review of Control Structures and Data Types | n/a |
+| 1.1 | Working with NetBeans IDE |  Course Introduction | n/a |
 
 
 ---
